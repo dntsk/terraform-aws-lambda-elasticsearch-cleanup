@@ -17,3 +17,15 @@ module "this" {
     INDEX    = var.index_prefix
   }
 }
+
+resource "aws_cloudwatch_event_rule" "sun_3am" {
+  name                = "${var.name}-event-rule"
+  description         = "Run lambda ${var.name} at Sunday 3am"
+  schedule_expression = "cron(0 3 ? * SUN *)"
+}
+
+resource "aws_cloudwatch_event_target" "lambda_restore_snapshot" {
+  rule      = aws_cloudwatch_event_rule.sun_3am.name
+  target_id = "restore_rds_snapshot"
+  arn       = var.name
+}
