@@ -9,11 +9,11 @@ module "this" {
   name = var.name
 
   vpc_security_group_ids = var.vpc_security_group_ids
-  vpc_subnet_ids = var.vpc_subnet_ids
+  vpc_subnet_ids         = var.vpc_subnet_ids
 
   environment_variables = {
-    KEEP   = var.keep_days
+    KEEP     = var.keep_days
     ENDPOINT = var.host
-    INDEX = var.index_prefix
+    INDEX    = var.index_prefix
   }
 }
