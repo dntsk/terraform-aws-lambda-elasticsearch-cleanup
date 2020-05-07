@@ -27,5 +27,5 @@ resource "aws_cloudwatch_event_rule" "sun_3am" {
 resource "aws_cloudwatch_event_target" "lambda_restore_snapshot" {
   rule      = aws_cloudwatch_event_rule.sun_3am.name
   target_id = "restore_rds_snapshot"
-  arn       = var.name
+  arn       = module.this.arn
 }
