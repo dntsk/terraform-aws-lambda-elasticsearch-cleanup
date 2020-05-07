@@ -1,6 +1,6 @@
 module "this" {
   source  = "dntsk/lambda-packager/aws"
-  version = "0.1.5"
+  version = "0.1.6"
 
   source_dir = "${path.module}/lambda"
   filename   = "lambda.py"
@@ -24,8 +24,8 @@ resource "aws_cloudwatch_event_rule" "sun_3am" {
   schedule_expression = "cron(0 3 ? * SUN *)"
 }
 
-resource "aws_cloudwatch_event_target" "lambda_restore_snapshot" {
+resource "aws_cloudwatch_event_target" "lambda_target" {
   rule      = aws_cloudwatch_event_rule.sun_3am.name
-  target_id = "restore_rds_snapshot"
+  target_id = "cleanup_elasticsearch"
   arn       = module.this.arn
 }
