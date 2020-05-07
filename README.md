@@ -1,6 +1,6 @@
 [![Logo](https://dntsk.dev/assets/logo_transparent_crop_360.png)](https://dntsk.dev)
 
-[![Maintained](https://img.shields.io/badge/maintained%20by-dntsk.dev-blue.svg)](https://dntsk.dev/) [![Terraform version](https://img.shields.io/badge/terraform-~>%20v0.12.24-33cc33.svg)](https://github.com/hashicorp/terraform/releases) [![GitHub tag](https://img.shields.io/github/tag/dntsk/terraform-aws-lambda-packager.svg)](https://github.com/dntsk/terraform-aws-lambda-packager/tags/) [![MIT license](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT) 
+[![Maintained](https://img.shields.io/badge/maintained%20by-dntsk.dev-blue.svg)](https://dntsk.dev/) [![MIT license](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT) [![Terraform version](https://img.shields.io/badge/terraform-~>%20v0.12.24-33cc33.svg)](https://github.com/hashicorp/terraform/releases) [![GitHub tag](https://img.shields.io/github/tag/dntsk/terraform-aws-lambda-elasticsearch-cleanup.svg)](https://github.com/dntsk/terraform-aws-lambda-elasticsearch-cleanup/tags/)
 
 # Terraform module with AWS Lambda to cleanup ES
 
