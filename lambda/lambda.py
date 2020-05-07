@@ -18,7 +18,7 @@ def main():
         index_date = i.split('-')[-1]
         if i.startswith(index_prefix) and index_date < earliest_to_keep_date:
             print(f'Deleting index: {i}')
-            # es.indices.delete(index=i, ignore=[400, 404])
+            es.indices.delete(index=i, ignore=[400, 404])
 
 
 def handler(event, context):
