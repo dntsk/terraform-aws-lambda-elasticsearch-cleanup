@@ -30,10 +30,12 @@ resource "aws_cloudwatch_event_target" "lambda_target" {
   arn       = module.this.arn
 }
 
-resource "aws_lambda_permission" "allow_cloudwatch_to_call_restore_rds_snapshot" {
+resource "aws_lambda_permission" "allow_cloudwatch_to_call_lambda" {
   statement_id  = "AllowExecutionFromCloudWatch"
   action        = "lambda:InvokeFunction"
   function_name = var.name
   principal     = "events.amazonaws.com"
   source_arn    = aws_cloudwatch_event_rule.sun_3am.arn
+
+  depends_on = [module.this]
 }
