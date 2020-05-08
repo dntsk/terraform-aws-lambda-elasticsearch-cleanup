@@ -19,12 +19,15 @@ module "lambda_cleanup_elasticsearch" {
   name = "es-cleanup"
   host = aws_elasticsearch_domain.elk.endpoint
   index_prefix = "filebeat"
+  keep_days = 180
 
   vpc_security_group_ids = [module.elk_sg.this_security_group_id]
   vpc_subnet_ids = module.vpc.private_subnets
 }
 
 ```
+
+Lambda will be invoked at 3am every Sunday by CloudWatch event rule (cron).
 
 ## License
 
