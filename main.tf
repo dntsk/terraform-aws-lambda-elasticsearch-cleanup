@@ -1,6 +1,6 @@
 module "this" {
   source  = "dntsk/lambda-packager/aws"
-  version = "0.1.7"
+  version = "0.1.8"
 
   source_dir = "${path.module}/lambda"
   filename   = "lambda.py"
